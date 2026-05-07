@@ -1,8 +1,31 @@
-# React + Vite
+# task-dashboard-react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React (Vite + JavaScript) task management dashboard: create tasks with title, description, status (Pending / In Progress / Completed), and due date; filter and sort the list; see status counts at the top; tasks persist in `localStorage`. Routes: **`/`** (all tasks) and **`/completed`** (completed only).
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
+
+Then open the URL Vite prints (usually `http://localhost:5173/`).
+
+**Environment:** Node.js **18+** (LTS is fine). This project uses Vite 5 and React 18.
+
+```bash
+npm run build    # production bundle
+npm run preview  # serve the build locally
+npm run lint     # eslint
+```
+
+## Stack
+
+- React 18, Vite 5
+- Tailwind CSS
+- Context API + `useTasks` hook
+- `react-router-dom` v6 for client-side routing
+
+## Data
+
+No backend: tasks are stored in the browser under the key `task-dashboard:tasks` (JSON). Clearing site data removes them.
